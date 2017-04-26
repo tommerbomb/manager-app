@@ -3,6 +3,8 @@ import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
+import EmployeeEdit from './components/EmployeeEdit';
+
 
 const image = require('../back_chevron.png');
 
@@ -14,7 +16,7 @@ const RouterComponent = () => {
         </Scene>
         <Scene key='main'>
           <Scene
-          onRight={() => { Actions.employeeCreate(); }}
+          onRight={() => Actions.employeeCreate()}
           rightTitle='Add'
           key='employeeList'
           component={EmployeeList}
@@ -26,6 +28,12 @@ const RouterComponent = () => {
           key='employeeCreate'
           component={EmployeeCreate}
           title='Create Employee'
+          />
+          <Scene
+          backButtonImage={image}
+          key='employeeEdit'
+          component={EmployeeEdit}
+          title='Edit Employee'
           />
         </Scene>
       </Router>

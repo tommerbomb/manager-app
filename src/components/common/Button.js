@@ -1,17 +1,15 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
 const Button = (props) => {
-  const { buttonStyle, textStyle, buttonContainerStyle } = styles;
+  const { buttonStyle, textStyle } = styles;
   const { onPress, children } = props;
   return (
-    <View style={buttonContainerStyle}>
     <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>
         { children }
       </Text>
     </TouchableOpacity>
-    </View>
   );
 };
 
@@ -34,9 +32,6 @@ const styles = {
     fontWeight: '600',
     paddingTop: 10,
     paddingBottom: 10
-  },
-  buttonContainerStyle: {
-    flexDirection: 'row'
   }
 };
 
